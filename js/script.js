@@ -26,6 +26,32 @@ createAllCards(cards);
 setTimeout(flippeCardsFront, 1000);
 setTimeout(flippeCardsBack, 2000);
 
+// Play in full screen
+let isFullScreen = false;
+
+const fullScreenElement = document.getElementById("full-screen");
+fullScreenElement.addEventListener("click", () => {
+  if (isFullScreen) {
+    document.exitFullscreen();
+    isFullScreen = false;
+  } else {
+    launchFullScreen(document.documentElement);
+  }
+});
+
+// launchFullScreen(document.documentElement);
+// Open in full screen
+function launchFullScreen(element) {
+  if (element.requestFullScreen) {
+    element.requestFullScreen();
+  } else if (element.mozRequestFullScreen) {
+    element.mozRequestFullScreen();
+  } else if (element.webkitRequestFullScreen) {
+    element.webkitRequestFullScreen();
+  }
+  isFullScreen = true;
+}
+
 // Create Single Card
 function createCard(img) {
   const cardContainer = document.querySelector(".main-content");
