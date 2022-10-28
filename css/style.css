@@ -97,6 +97,19 @@ ul {
   width: 100%;
   transition: 0.5s;
 }
+.main-info .sticker-1 {
+  width: 150px;
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+}
+.main-info .sticker {
+  width: 150px;
+  position: absolute;
+  left: 35px;
+  bottom: 0;
+}
 .main-info > img {
   max-width: 100%;
   position: absolute;
